@@ -8,17 +8,18 @@ numeroDecimal = 34.2
 
 valorBoolean = True
 
-texto = 'Texto a guardar'  # Se pueden usar tanto comillas simples como dobles
+texto = 'Texto a guardar'  
+# Se pueden usar tanto comillas simples como dobles
 
 # -------------------------
 
-# Conversión de tipos de datos
+# Tipos de datos: detección y conversiones
 
 # 1ro: Obtener el tipo de datos de una variable -- método type()
 
 print(type(numeroEntero))
 
-# 2do: Cada tipo tiene su método aplicable para conversión, por ejemplo:
+# 2do: Cada tipo tiene su método aplicable para conversión
 
 # Pasar a tipo string --> método str()
 
@@ -53,8 +54,10 @@ print(f'Módulo: {num1 % num2}')
 
 # Comparación
 
-print(num1 < num2)
-print(num1 > num2)
+print(num1 < num2)  # menor que
+print(num1 > num2)  # mayor que
 num3 = 5
-print(num1 == num3)
-print(num1 >= num3)
+print(num1 == num3)  # igualdad
+print(num1 != num3)  # diferencia
+print(num1 <= num3)  # menor o igual
+print(num1 >= num3)  # mayor o igual
