@@ -6,15 +6,16 @@
 
 Temas a ver en esta clase:
 
-* Introducción a lógica.
 * Resolución de problemas mediante software.
 * Algoritmos y programas.
-* Introducción al lenguaje **python**.
-* Variables. Tipos de datos.
+* Introducción a lógica.
 * Estructuras de control:
   * If - Else
   * For
   * While
+* Lenguajes de programación.
+* Introducción al lenguaje **python**.
+* Variables. Tipos de datos.
 * Funciones.
 
 Referencias a archivos de código:
