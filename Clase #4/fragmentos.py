@@ -73,6 +73,61 @@ def imprimirLibros(libros):
     print('-' * 50)
 
 
-datos = []
-datos = cargarLibros()
-imprimirLibros(datos)
+def seleccionarLibro(operacion, libros):
+    imprimirLibros(libros)
+    if (operacion == 'U'):
+        idLibro = int(input('Ingrese el número del libro a modificar: '))
+        unLibro = libros[idLibro]
+        libros[idLibro] = modificarLibro(unLibro)
+    else:
+        idLibro = int(input('Ingrese el número del libro a eliminar: '))
+        libros = eliminarLibro(libros, idLibro)
+    return libros
+
+
+def modificarLibro(modificable):
+    print('Inicia actualización de datos:')
+    tituloTemp = input('Ingrese el nuevo título: ')
+    autorTemp = input('Ingrese los datos del nuevo autor/a: ')
+    anioPublicacionTemp = input('Ingrese el nuevo año de publicación: ')
+    precioUnitarioTemp = float(input('Ingrese el nuevo precio unitario: $'))
+    cantEjemplaresTemp = int(input('Ingrese la nueva cantidad de ejemplares: '))
+    unLibro = Libro(titulo=tituloTemp, autor=autorTemp,
+                    anioPublicacion=anioPublicacionTemp,
+                    cantidadEjemplares=cantEjemplaresTemp,
+                    precioUnitario=precioUnitarioTemp)
+    return unLibro
+
+
+def eliminarLibro(libros, eliminable):
+    print('Confirma que desea eliminar el siguiente libro?')
+    unLibro = libros[eliminable]
+    print(f'{unLibro}')
+    confirmar = input('Confirma eliminación? S / N ')
+    if (confirmar == 'S'):
+        libros.remove(unLibro)
+    return libros
+
+
+def menu():
+    datos = []
+    print('-' * 50)
+    print('Inicio - CRUD básico')
+    opcion = 'P'
+    while (opcion != 'X'):
+        print('Seleccione la opción a ejecutar:')
+        print('[C] Agregar libros')
+        print('[R] Obtener listado de libros')
+        print('[U] Modificar un libro')
+        print('[D] Eliminar un libro')
+        print('[X] Salir')
+        opcion = input('Opción elegida: ')
+        if (opcion == 'C'):
+            datos = cargarLibros()
+        elif (opcion == 'R'):
+            imprimirLibros(datos)
+        elif (opcion == 'U' or opcion == 'D'):
+            datos = seleccionarLibro(opcion, datos)
+
+
+menu()
