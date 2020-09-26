@@ -32,6 +32,7 @@ def cargarLibros():
     libros = []  # Se inicializa una lista vacía
     opcion = True
     while opcion:
+        print('-' * 50)
         # Se sigue cargando
         tituloTemp = input('Ingrese el título: ')
         autorTemp = input('Ingrese el autor/a: ')
@@ -46,6 +47,7 @@ def cargarLibros():
 
 
 def imprimirLibros(libros):
+    print('-' * 50)
     id = 0
     for unLibro in libros:
         print(f'#{id} - {unLibro}')
@@ -54,6 +56,7 @@ def imprimirLibros(libros):
 
 def seleccionarLibro(operacion, libros):
     imprimirLibros(libros)
+    print('-' * 50)
     if (operacion == 'U'):
         idLibro = int(input('Ingrese el número del libro a modificar: '))
         libros = modificarLibro(libros, idLibro)
@@ -64,6 +67,7 @@ def seleccionarLibro(operacion, libros):
 
 
 def modificarLibro(libros, modificable):
+    print('-' * 50)
     print('Inicia actualización de datos:')
     temp = libros[modificable]
     tituloTemp = input(f'Ingrese el nuevo título para {temp.getTitulo()}: ')
@@ -76,6 +80,7 @@ def modificarLibro(libros, modificable):
 
 
 def eliminarLibro(libros, eliminable):
+    print('-' * 50)
     print('Confirma que desea eliminar el siguiente libro?')
     unLibro = libros[eliminable]
     print(f'{unLibro}')
@@ -90,6 +95,7 @@ def menu():
     print('Inicio - CRUD básico')
     opcion = 'P'
     while (opcion != 'X'):
+        print('-' * 50)
         print('Seleccione la opción a ejecutar:')
         print('[C] Agregar libros')
         print('[R] Obtener listado de libros')
