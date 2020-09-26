@@ -13,3 +13,4 @@ Temas a ver en esta clase:
 Referencias a archivos de código:
 
 * _fragmentos.py_: Código empleado en la presentación teórica de la clase.
+* _Ejemplo-1.py_: Código empleado para modificar la operatoria del ejemplo de la clase.

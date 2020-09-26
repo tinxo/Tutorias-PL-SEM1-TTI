@@ -6,7 +6,8 @@
 class Libro:
     ''' Clase Libro (esta es una cadena de descripción) '''
 
-    def __init__(self, titulo, autor, anioPublicacion):
+    def __init__(self, titulo, autor, anioPublicacion, cantidadEjemplares,
+                 precioUnitario):
         self.titulo = titulo
         self.autor = autor
         self.anioPublicacion = anioPublicacion
@@ -56,23 +57,22 @@ def seleccionarLibro(operacion, libros):
     imprimirLibros(libros)
     if (operacion == 'U'):
         idLibro = int(input('Ingrese el número del libro a modificar: '))
-        libros = modificarLibro(libros, idLibro)
+        unLibro = libros[idLibro]
+        libros[idLibro] = modificarLibro(unLibro)
     else:
         idLibro = int(input('Ingrese el número del libro a eliminar: '))
         libros = eliminarLibro(libros, idLibro)
     return libros
 
 
-def modificarLibro(libros, modificable):
+def modificarLibro(modificable):
     print('Inicia actualización de datos:')
-    temp = libros[modificable]
-    tituloTemp = input(f'Ingrese el nuevo título para {temp.getTitulo()}: ')
-    autorTemp = input(f'Ingrese los datos del nuevo autor/a: ')
+    tituloTemp = input('Ingrese el nuevo título: ')
+    autorTemp = input('Ingrese los datos del nuevo autor/a: ')
     anioPublicacionTemp = input('Ingrese el nuevo año de publicación: ')
     unLibro = Libro(titulo=tituloTemp, autor=autorTemp,
                     anioPublicacion=anioPublicacionTemp)
-    libros[modificable] = unLibro
-    return libros
+    return unLibro
 
 
 def eliminarLibro(libros, eliminable):
